@@ -3,6 +3,7 @@ import hashlib
 import json
 import random
 import time
+import os
 
 import requests
 import websockets
@@ -291,7 +292,15 @@ def send_ding_msg():
     ensure200(response)
 
 
+def init_config():
+    # Config.corpId = os.getenv('CORP_ID')
+    # Config.ding_bot_url = os.getenv("DING_BOT_URL")
+    pass
+
+
 if __name__ == '__main__':
+    init_config()
+
     for nonce in range(Config.auth_code_retry_cnt, 0, -1):
         # 获取设置 Config.ding_auth_code
         get_ding_talk_auth_code()
