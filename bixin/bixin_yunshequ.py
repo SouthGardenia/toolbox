@@ -239,7 +239,7 @@ def do_comment(articles, limit):
         ensure200(response)
         headers.update({'token': response.headers.get('token')})
         print(f'评论成功:《{art.get("title") or art.get("content")}》---{art["user"]["nickname"]} 📢{cmt_word}')
-        time.sleep(int(2 + random.random() * 3))
+        time.sleep(int(5 + random.random() * 10))
 
 
 def show_rank(user):

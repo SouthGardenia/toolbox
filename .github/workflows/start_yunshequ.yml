@@ -2,7 +2,7 @@ name: 云社区
 
 on:
   schedule:
-    - cron: '30 2 * * *'
+    - cron: '0 1 * * *'
 
 jobs:
   build:
