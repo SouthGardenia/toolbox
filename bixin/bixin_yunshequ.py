@@ -27,8 +27,8 @@ class Config:
         self.ding_console_id = ding_console_id
         self.ding_bot_url = ding_bot_url
 
-        self.max_like_cnt_per_day = 0
-        self.max_comment_cnt_per_day = 0
+        self.max_like_cnt_per_day = 3
+        self.max_comment_cnt_per_day = 3
         self.auth_code_retry_cnt = 3
 
         # ding
