@@ -26,3 +26,5 @@ jobs:
         env:
           CORP_ID: ${{ secrets.CORP_ID }}
           DING_BOT_URL: ${{ secrets.DING_BOT_URL }}
+          Y_HOST: ${{ secrets.Y_HOST }}
+          DING_CONSOLE_ID: ${{ secrets.DING_CONSOLE_ID }}
