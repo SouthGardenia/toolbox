@@ -2,12 +2,14 @@ import asyncio
 import hashlib
 import json
 import os
+import sys
 import random
 import time
 
 import requests
 import websockets
 
+sys.path.append(os.path.dirname(sys.path[0]))
 from util import DingBot
 
 CORP_ID = os.getenv('CORP_ID')
