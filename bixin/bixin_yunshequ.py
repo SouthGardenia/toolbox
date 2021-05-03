@@ -319,7 +319,7 @@ def get_sign(art_id):
 
 def send_ding_msg():
     text = f"#### 自动逛云社区, [赚经验请点我]({conf.ding_confirm_wss_url})"
-    bot.send_markdown('点击赚取云社区积分', text)
+    bot.send_markdown('点击赚取云社区积分', text, is_at_all=True)
 
 
 if __name__ == '__main__':
