@@ -2,20 +2,22 @@ import asyncio
 import hashlib
 import json
 import os
-import sys
 import random
+import sys
 import time
 
 import requests
 import websockets
 
-sys.path.append(os.path.dirname(sys.path[0]))
 from util import DingBot
+
+sys.path.append(os.path.dirname(sys.path[0]))
 
 CORP_ID = os.getenv('CORP_ID')
 DING_BOT_URL = os.getenv("DING_BOT_URL")
 Y_HOST = os.getenv("Y_HOST")
 DING_CONSOLE_ID = os.getenv("DING_CONSOLE_ID")
+
 if not all([CORP_ID, DING_BOT_URL, Y_HOST, DING_CONSOLE_ID]):
     raise EnvironmentError('参数[CORP_ID, DING_BOT_URL, Y_HOST, DING_CONSOLE_ID]未完全配置，请检查secrets！')
 
@@ -125,8 +127,8 @@ def login():
         'versionNumber': '3'
     }
     response = session.post(conf.login_url, headers=headers, data=payload)
-    print(f'云社区登录：{response.text}')
     ensure200(response)
+    print(f"云社区登录: '{'成功' if response.json().get('code') == 200 else response.text}")
 
     user_info = response.json()['result']
     # 用户已登录
