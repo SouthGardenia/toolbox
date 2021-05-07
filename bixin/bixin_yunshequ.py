@@ -9,9 +9,8 @@ import time
 import requests
 import websockets
 
-from util import DingBot
-
 sys.path.append(os.path.dirname(sys.path[0]))
+from util import DingBot
 
 CORP_ID = os.getenv('CORP_ID')
 DING_BOT_URL = os.getenv("DING_BOT_URL")
