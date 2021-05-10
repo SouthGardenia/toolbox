@@ -290,7 +290,9 @@ def show_rank(user):
         cur = rank_list[i]
         print(f'rank: {i + 1},\t姓名: {cur["userName"]},\t分数: {cur["totalScore"]},\t本月变化: {cur["changeScore"]:+}')
         if cur['userId'] == user['userId']:
-            print(f'您的当前排名: {i + 1}名')
+            rank_msg = f'你的最新排名: 第**{i + 1}**名'
+            print(rank_msg)
+            bot.send_markdown(title='刚出炉的云社区排名', text=rank_msg)
             return
     print(f'您的排名: 100+')
 
